@@ -296,6 +296,26 @@ select {
   color: var(--ink);
 }
 
+input[type="number"],
+input[type="text"] {
+  width: 9rem;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+label.inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
 button,
 .btn {
   display: inline-flex;
@@ -486,6 +506,13 @@ button.ribbon:hover {
 .unfold-svg .panel.top {
   fill: rgba(214, 75, 106, 0.14);
   stroke: var(--ribbon);
+}
+
+.unfold-svg .flap {
+  fill: rgba(184, 151, 59, 0.42);
+  stroke: var(--foil);
+  stroke-width: 1;
+  animation: panelIn 0.6s ease both;
 }
 
 .unfold-svg text {

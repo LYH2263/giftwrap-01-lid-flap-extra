@@ -14,3 +14,14 @@ def get_box(bid):
         return dict(r) if r else None
     finally:
         c.close()
+
+def set_default_flap(bid, flap_m):
+    c = connect()
+    try:
+        cur = c.execute("UPDATE boxes SET flap_m=? WHERE id=?", (float(flap_m), bid))
+        c.commit()
+        if cur.rowcount == 0:
+            return None
+        return get_box(bid)
+    finally:
+        c.close()
